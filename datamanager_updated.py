@@ -731,11 +731,11 @@ class DataManager:
         df_corr = pd.DataFrame()
         df_corr.index = self.data.index
 
-        #Las variables que se se corrigen con el método seleccionado.
+        #Las variables que no se corrigen.
         for var in ["PM01 [ug/m3]", "PM2_5 [ug/m3]", "PM10 [ug/m3]","NH3 [ppm]", "NOx [ppb]"]:
             df_corr[var] = self.data[var]
 
-        #Las variables que se se corrigen con el método seleccionado.
+        #Las variables que se corrigen con el método seleccionado.
         for var in ["CO [ppm]", "O3 [ppb]", "NO2 [ppb]", "Temperatura [°C]", "Humedad [%RH]"]:
             if method.lower() == "offset":
                 df_corr[var] = (data[var]+offset[var][0])*offset[var][1]
