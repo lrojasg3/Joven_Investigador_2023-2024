@@ -658,7 +658,7 @@ class DataManager:
         df: dataframe con índice tipo fecha
         """
 
-        cluster = MongoClient("mongodb+srv://SimpleSpace:bio2343038@cluster0-xfp4r.gcp.mongodb.net/test?retryWrites=true&w=majority")
+        cluster = MongoClient("mongodb+srv://<username><password><cluster>-xfp4r.gcp.mongodb.net/...")
         database = cluster["test"]
         collection = database["s4"]
 
